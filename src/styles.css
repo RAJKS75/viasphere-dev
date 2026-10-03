@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
+@import "tailwindcss" source("../");
+
+:root {
+  --ink: #16202e;
+  --ink-soft: #536071;
+  --parchment: #f8f4eb;
+  --parchment-deep: #e9dfce;
+  --navy: #16233d;
+  --navy-deep: #0b1322;
+  --gold: #b1842f;
+  --gold-bright: #d3a24c;
+  --clay: #a5583f;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Work Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; background: var(--parchment); color: var(--ink); }
+h1,h2,h3,h4,.font-display { font-family: 'Fraunces', Georgia, serif; }
+code { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; }
+.gold-text { color: var(--gold-bright); }
+.gold-grid { background-image: linear-gradient(rgba(211,162,76,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(211,162,76,.18) 1px, transparent 1px); background-size: 42px 42px; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.animate-rise { animation: rise .7s cubic-bezier(.16,1,.3,1) both; }
