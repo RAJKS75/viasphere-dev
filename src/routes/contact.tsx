@@ -77,7 +77,7 @@ function Contact() {
           <Field label="Academic background and goals"><textarea name="message" required rows={5} className={`${inputStyle} resize-none`} /></Field>
 
           <div className="mt-2 flex flex-wrap gap-3">
-            <button type="submit" name="channel" value="email" className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--radiant-violet),var(--radiant-pink))] px-6 py-3.5 text-sm font-bold text-blue-700 shadow-lg shadow-violet-500/20 transition-transform hover:-translate-y-0.5">
+            <button type="submit" name="channel" value="email" className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--radiant-violet),var(--radiant-pink))] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-violet-500/20 transition-transform hover:-translate-y-0.5">
               <Mail className="h-4 w-4" /> Send by Email
             </button>
             <button type="submit" name="channel" value="whatsapp" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-transform hover:-translate-y-0.5">
