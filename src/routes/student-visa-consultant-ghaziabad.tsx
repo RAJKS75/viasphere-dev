@@ -1,3 +1,4 @@
+import { CounsellingButton } from '@/components/Counselling'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import {
   ArrowRight,
@@ -56,6 +57,7 @@ const supportAreas = [
   },
 ]
 
+const countryRoutes: Record<string,string> = { 'United Kingdom':'/destinations/uk', 'United States':'/destinations/usa', Australia:'/destinations/australia', Germany:'/destinations/germany', France:'/destinations/france', Ireland:'/destinations/ireland' }
 const destinations = [
   'United Kingdom',
   'United States',
@@ -128,20 +130,20 @@ function StudentVisaLandingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="overflow-hidden">
-      <section className="relative overflow-hidden bg-[linear-gradient(125deg,#312e81_0%,#6d28d9_36%,#db2777_72%,#f97316_100%)] text-white">
+      <section className="relative overflow-hidden bg-[#e4f2fd] text-[var(--ink)]">
         <div className="radiant-grid absolute inset-0 opacity-15" />
         <div className="absolute -left-32 top-16 h-80 w-80 rounded-full bg-cyan-300/30 blur-3xl" />
         <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-yellow-300/25 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-20 md:grid-cols-[1.15fr_.85fr] md:items-center md:pb-24 md:pt-28">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-20 md:grid-cols-[1.15fr_.85fr] md:items-center md:pb-24 md:pt-20">
           <div className="animate-rise">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur">
-              <MapPin className="h-4 w-4 text-yellow-200" /> Ghaziabad · Noida · Delhi NCR
+              <MapPin className="h-4 w-4 text-blue-800" /> Ghaziabad · Noida · Delhi NCR
             </span>
-            <h1 className="mt-7 font-display text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl">
-              Student visa consultants in Ghaziabad for <span className="text-yellow-200">study abroad.</span>
+            <h1 className="mt-7 font-display text-4xl font-bold leading-[1.15] tracking-tight md:text-4xl">
+              Student visa consultants in Ghaziabad for <span className="text-blue-800">study abroad.</span>
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)] md:text-xl">
               Get personalised support for overseas course selection, university applications, student visa preparation and pre-departure planning from ViaSphere Global Consultants.
             </p>
 
@@ -156,17 +158,17 @@ function StudentVisaLandingPage() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-3.5 text-sm font-bold text-blue-800 backdrop-blur transition-colors hover:bg-white/20"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
               </a>
             </div>
-            <p className="mt-4 text-sm text-white/70">Talk to us about undergraduate and postgraduate study plans for upcoming intakes.</p>
+            <p className="mt-4 text-sm text-[var(--ink-soft)]">Talk to us about undergraduate and postgraduate study plans for upcoming intakes.</p>
           </div>
 
           <aside className="rounded-[2rem] border border-white/30 bg-white/15 p-5 shadow-2xl shadow-violet-950/25 backdrop-blur-xl">
             <div className="rounded-[1.5rem] bg-white p-7 text-[var(--navy)] md:p-8">
-              <span className="text-sm font-bold uppercase tracking-[.14em] text-pink-600">Start with your profile</span>
+              <span className="text-sm font-bold uppercase tracking-[.14em] text-blue-700">Start with your profile</span>
               <h2 className="mt-3 font-display text-3xl font-semibold">Plan your next intake with clarity.</h2>
               <ul className="mt-7 space-y-4">
                 {[
@@ -181,12 +183,9 @@ function StudentVisaLandingPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/contact"
-                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--radiant-violet),var(--radiant-pink))] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-violet-500/20"
-              >
-                Send an Enquiry <ArrowRight className="h-4 w-4" />
-              </Link>
+              <CounsellingButton className="button-primary mt-6">
+                Get Free Counselling <ArrowRight className="h-4 w-4" />
+              </CounsellingButton>
             </div>
           </aside>
         </div>
@@ -198,10 +197,10 @@ function StudentVisaLandingPage() {
         <TrustPoint icon={<CalendarCheck />} title="Flexible consultation" text="Connect by phone, WhatsApp, online enquiry or an office visit." />
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="max-w-3xl">
-          <span className="text-sm font-bold uppercase tracking-[.18em] text-pink-600">Complete student support</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-[var(--navy)] md:text-5xl">Guidance for every important stage</h2>
+          <span className="text-sm font-bold uppercase tracking-[.18em] text-blue-700">Complete student support</span>
+          <h2 className="mt-3 font-display text-4xl font-semibold text-[var(--navy)] md:text-4xl">Guidance for every important stage</h2>
           <p className="mt-5 text-lg leading-relaxed text-[var(--ink-soft)]">
             Studying abroad involves connected decisions about your programme, institution, documents, finances and visa timeline. ViaSphere brings those steps into one practical plan built around your circumstances.
           </p>
@@ -219,7 +218,7 @@ function StudentVisaLandingPage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(135deg,#eef2ff,#fdf2f8_48%,#fff7ed)] py-24">
+      <section className="bg-[#eaf4fc] py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-10 md:grid-cols-[.8fr_1.2fr] md:items-end">
             <div>
@@ -231,20 +230,11 @@ function StudentVisaLandingPage() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {destinations.map((destination, index) => (
+            {destinations.map((destination) => (
               <Link
                 key={destination}
-                to="/destinations"
-                className={`rounded-2xl p-5 font-display text-lg font-semibold text-[var(--navy)] transition-transform hover:-translate-y-1 ${[
-                  'bg-violet-200',
-                  'bg-pink-200',
-                  'bg-orange-200',
-                  'bg-cyan-200',
-                  'bg-yellow-200',
-                  'bg-emerald-200',
-                  'bg-indigo-200',
-                  'bg-rose-200',
-                ][index]}`}
+                to={countryRoutes[destination] ?? '/destinations'}
+                className="rounded-2xl border border-blue-100 bg-white p-5 text-lg font-semibold text-[var(--navy)] hover:border-blue-300"
               >
                 {destination}
               </Link>
@@ -253,13 +243,13 @@ function StudentVisaLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <span className="text-sm font-bold uppercase tracking-[.18em] text-orange-600">How it works</span>
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold text-[var(--navy)] md:text-5xl">A clear route from your first consultation to visa preparation</h2>
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <span className="text-sm font-bold uppercase tracking-[.18em] text-blue-700">How it works</span>
+        <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold text-[var(--navy)] md:text-4xl">A clear route from your first consultation to visa preparation</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-4">
           {steps.map((step) => (
             <article key={step.label} className="rounded-3xl border border-violet-100 bg-white p-7 shadow-sm">
-              <span className="text-sm font-extrabold text-pink-500">{step.label}</span>
+              <span className="text-sm font-extrabold text-blue-700">{step.label}</span>
               <h3 className="mt-3 font-display text-xl font-semibold text-[var(--navy)]">{step.title}</h3>
               <p className="mt-3 text-base leading-relaxed text-[var(--ink-soft)]">{step.description}</p>
             </article>
@@ -268,25 +258,22 @@ function StudentVisaLandingPage() {
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-8 px-6 pb-24 md:grid-cols-[.85fr_1.15fr]">
-        <aside className="rounded-[2rem] bg-[var(--navy)] p-8 text-white md:p-10">
-          <MapPin className="h-9 w-9 text-cyan-300" />
-          <span className="mt-8 block text-sm font-bold uppercase tracking-[.18em] text-yellow-200">Visit ViaSphere</span>
+        <aside className="rounded-[2rem] bg-[#e4f2fd] p-8 text-[var(--ink)] md:p-10">
+          <MapPin className="h-9 w-9 text-blue-700" />
+          <span className="mt-8 block text-sm font-bold uppercase tracking-[.18em] text-blue-800">Visit ViaSphere</span>
           <h2 className="mt-3 font-display text-3xl font-semibold">Student visa consultation in Ghaziabad</h2>
-          <p className="mt-5 text-base leading-relaxed text-white/75">
+          <p className="mt-5 text-base leading-relaxed text-[var(--ink-soft)]">
             1st Floor, AVS City Square<br />
             11, Raj Nagar Extension<br />
             Ghaziabad 201017, India
           </p>
-          <p className="mt-5 text-base leading-relaxed text-white/75">
+          <p className="mt-5 text-base leading-relaxed text-[var(--ink-soft)]">
             Monday–Friday: 9:30am–6:30pm<br />
             Saturday: 10:00am–2:00pm
           </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-violet-800"
-          >
+          <CounsellingButton className="button-primary mt-6">
             Book an Office Consultation <ArrowRight className="h-4 w-4" />
-          </Link>
+          </CounsellingButton>
         </aside>
 
         <div>
@@ -306,22 +293,22 @@ function StudentVisaLandingPage() {
       </section>
 
       <section className="px-6 pb-10">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-[linear-gradient(120deg,var(--radiant-violet),var(--radiant-pink),var(--radiant-orange))] px-8 py-16 text-center text-white shadow-2xl shadow-pink-500/20 md:px-16">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-[#e4f2fd] px-8 py-16 text-center text-[var(--ink)] shadow-2xl shadow-pink-500/20 md:px-16">
           <div className="radiant-grid absolute inset-0 opacity-15" />
           <div className="relative">
-            <h2 className="font-display text-4xl font-semibold md:text-5xl">Build your study-abroad plan with ViaSphere.</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/85">
+            <h2 className="font-display text-4xl font-semibold md:text-4xl">Build your study-abroad plan with ViaSphere.</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)]">
               Discuss your academic profile, preferred destination, budget and intended intake with our team.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-violet-800">
+              <CounsellingButton className="button-primary mt-6">
                 Book a Free Consultation <ArrowRight className="h-4 w-4" />
-              </Link>
+              </CounsellingButton>
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/45 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur"
+                className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-7 py-4 text-sm font-bold text-blue-800 backdrop-blur"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp ViaSphere
               </a>

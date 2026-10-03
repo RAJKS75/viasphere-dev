@@ -1,4 +1,5 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { CounsellingProvider } from '@/components/Counselling'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SITE_URL } from '@/lib/seo'
@@ -81,11 +82,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           />
       </head>
       <body>
-        <div className="min-h-screen flex flex-col">
+        <CounsellingProvider><div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        </CounsellingProvider>
         <Scripts />
       </body>
     </html>
