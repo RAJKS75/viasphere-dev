@@ -184,7 +184,7 @@ function StudentVisaLandingPage() {
                 ))}
               </ul>
               <CounsellingButton className="button-primary mt-6">
-                Get Free Counselling <ArrowRight className="h-4 w-4" />
+                Avail Free Consultation <ArrowRight className="h-4 w-4" />
               </CounsellingButton>
             </div>
           </aside>
@@ -302,7 +302,7 @@ function StudentVisaLandingPage() {
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
               <CounsellingButton className="button-primary mt-6">
-                Book a Free Consultation <ArrowRight className="h-4 w-4" />
+                Avail Free Consultation <ArrowRight className="h-4 w-4" />
               </CounsellingButton>
               <a
                 href={WHATSAPP_LINK}

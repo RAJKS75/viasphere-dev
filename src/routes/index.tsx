@@ -1,6 +1,6 @@
-import { CounsellingButton } from '@/components/Counselling'
+import { CounsellingButton, CounsellingForm } from '@/components/Counselling'
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { ArrowRight, Award, CheckCircle2, GraduationCap, MapPin, MessageCircle, Plane, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, Award, CheckCircle2, GraduationCap, MapPin, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react'
 import { processSteps, services } from '@/data/content'
 import { studyDestinations } from '@/data/studyAbroad'
 import { seoHead } from '@/lib/seo'
@@ -21,11 +21,12 @@ const destinationRoutes: Record<string, string> = {
   'new-zealand': '/destinations/new-zealand', 
   france: '/destinations/france',
   germany: '/destinations/germany', 
+  malta: '/destinations/malta',
   ireland: '/destinations/ireland',
 }
 
 function Home() {
-  const featuredDestinations = studyDestinations.slice(0, 7)
+  const featuredDestinations = studyDestinations
 
   return (
     <div className="home-page overflow-hidden bg-[var(--parchment)]">
@@ -34,7 +35,7 @@ function Home() {
         <div className="gold-grid absolute inset-0 opacity-25" />
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[var(--gold)]/20 blur-3xl" />
         <div className="absolute -bottom-40 left-0 h-96 w-96 rounded-full bg-[var(--clay)]/10 blur-3xl" />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 md:grid-cols-[1.15fr_.85fr] md:items-center md:pb-20 md:pt-20">
+        <div className="home-hero-grid">
           <div className="animate-rise">
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/45 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[.18em] text-[var(--gold-bright)]">
               <Sparkles className="h-4 w-4" /> Your future. A world of possibilities.
@@ -46,11 +47,11 @@ function Home() {
               Personalised study abroad counselling, university admissions and student visa preparation for students in Ghaziabad and Delhi NCR.
             </p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--ink-soft)]">
-              Explore UK, USA, Australia, Germany, France, Ireland and New Zealand study options, with guidance from profile assessment through visa preparation.
+              Explore UK, USA, Australia, Germany, France, Malta, Ireland and New Zealand study options, with guidance from profile assessment through visa preparation.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <CounsellingButton className="button-primary mt-6">
-                Book a Free Consultation <ArrowRight className="h-4 w-4" />
+              <CounsellingButton className="button-primary">
+                Avail Free Consultation <ArrowRight className="h-4 w-4" />
               </CounsellingButton>
               <a href="https://wa.me/919599080935" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-7 py-4 text-sm font-semibold text-blue-800 backdrop-blur transition hover:bg-white/10">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
@@ -64,29 +65,12 @@ function Home() {
             </Link>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="rounded-[2rem] border border-[var(--gold)]/35 bg-white/[.06] p-4 shadow-2xl backdrop-blur-xl">
-              <div className="rounded-[1.5rem] bg-[var(--parchment)] p-7 text-[var(--navy)]">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold uppercase tracking-[.2em] text-[var(--gold)]">VIASPHERE</span>
-                    {/* Fixed: Downgraded to h3 to maintain proper document outline */}
-                    <h3 className="mt-2 font-display text-3xl font-semibold">Your roadmap</h3>
-                  </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-800"><Plane className="h-6 w-6" /></div>
-                </div>
-                <div className="mt-8 space-y-4">
-                  {['Profile assessment', 'Course & university selection', 'Application & document review', 'Student visa preparation', 'Pre-departure guidance'].map((item, i) => (
-                    <div key={item} className="flex items-center gap-3 rounded-xl border border-black/5 bg-white px-4 py-3 shadow-sm">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-800">{i + 1}</span>
-                      <span className="text-sm font-semibold">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-7 flex items-center gap-2 text-xs text-[var(--ink-soft)]"><ShieldCheck className="h-4 w-4 text-[var(--gold)]" /> Guidance designed around your profile and goals.</div>
-              </div>
-            </div>
-          </div>
+          <aside id="home-consultation" className="home-consultation" aria-labelledby="home-consultation-title">
+            <p className="eyebrow">Your study abroad journey starts here</p>
+            <h2 id="home-consultation-title">Avail Free Consultation</h2>
+            <p className="consultation-intro">Tell us your study plans. Our Ghaziabad team can help you choose your next step.</p>
+            <CounsellingForm />
+          </aside>
         </div>
       </section>
 
@@ -115,7 +99,8 @@ function Home() {
                 <div className="h-40 overflow-hidden bg-blue-100">
                   {/* Fixed: Added width & height attributes to minimize CLS */}
                   <img 
-                    src={d.image} 
+                    src={d.image}
+                    style={{ objectPosition: d.id === 'malta' ? 'center 75%' : 'center' }} 
                     alt={`Study in ${d.country} - University & Visa Guidance`} 
                     loading="lazy" 
                     width={320}
@@ -194,7 +179,7 @@ function Home() {
               <h2 className="mt-3 font-display text-4xl font-semibold md:text-4xl">Let's map your next step.</h2>
               <p className="mt-5 max-w-xl text-[var(--ink-soft)]">Tell us about your academic background, preferred destination, course interests and intended intake.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <CounsellingButton className="button-primary mt-6">Get Free Counselling <ArrowRight className="h-4 w-4" /></CounsellingButton>
+                <CounsellingButton className="button-primary">Avail Free Consultation <ArrowRight className="h-4 w-4" /></CounsellingButton>
                 <a href="tel:+919599080935" className="inline-flex items-center gap-2 rounded-full border border-blue-200 px-7 py-3.5 text-sm font-semibold">Call +91 9599080935</a>
               </div>
             </div>

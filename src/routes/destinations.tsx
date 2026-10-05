@@ -7,7 +7,7 @@ export const Route = createFileRoute('/destinations')({
   component: Destinations,
   head: () => seoHead({
     title: 'Study Abroad Destinations for Indian Students | ViaSphere',
-    description: 'Explore study destinations including the UK, USA, Australia, Germany, France, Ireland and New Zealand with ViaSphere Global Consultants.',
+    description: 'Explore study destinations including the UK, USA, Australia, Germany, France, Malta, Ireland and New Zealand with ViaSphere Global Consultants.',
     path: '/destinations',
   }),
 })
@@ -19,6 +19,7 @@ const destinationRoutes: Record<string, string> = {
   'new-zealand': '/destinations/new-zealand',
   france: '/destinations/france',
   germany: '/destinations/germany',
+  malta: '/destinations/malta',
   ireland: '/destinations/ireland',
 }
 
@@ -48,6 +49,7 @@ function Destinations() {
               <div className="relative h-56 bg-slate-900">
                 <img
                   src={d.image}
+                    style={{ objectPosition: d.id === 'malta' ? 'center 75%' : 'center' }}
                   alt={`${d.country} study destination`}
                   className="h-full w-full object-cover opacity-80"
                   loading="lazy"

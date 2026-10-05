@@ -17,9 +17,9 @@ try {
     if (attempt >= 60 || (server && server.exitCode !== null)) throw new Error(`Preview did not start.\n${logs}`)
     await new Promise((resolve) => setTimeout(resolve, 500))
   }
-  const countries = { uk: 'the UK', usa: 'the USA', australia: 'Australia', 'new-zealand': 'New Zealand', france: 'France', germany: 'Germany', ireland: 'Ireland' }
+  const countries = { uk: 'the UK', usa: 'the USA', australia: 'Australia', 'new-zealand': 'New Zealand', france: 'France', germany: 'Germany', ireland: 'Ireland', malta: 'Malta' }
   const routes = ['/', '/about', '/services', '/contact', '/student-visa-consultant-ghaziabad', '/destinations', '/exams', ...Object.keys(countries).map((id) => `/destinations/${id}`), ...['ielts', 'toefl', 'gmat', 'gre', 'sat'].map((id) => `/exams/${id}`)]
-  const assets = new Set(['/robots.txt', '/sitemap.xml', '/images/viasphere-logo.png', ...Object.keys(countries).map((id) => `/documents/${id}-student-visa-guide.pdf`)])
+  const assets = new Set(['/robots.txt', '/sitemap.xml', '/images/viasphere-logo.png', '/images/australia.jpg', '/images/malta.jpg', ...Object.keys(countries).map((id) => `/documents/${id}-student-visa-guide.pdf`)])
   for (const path of routes) {
     const response = await get(path)
     assert.equal(response.status, 200, path)
