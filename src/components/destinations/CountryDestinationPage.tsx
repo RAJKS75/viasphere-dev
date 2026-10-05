@@ -17,7 +17,7 @@ export function CountryDestinationPage({ destination }: { destination: Destinati
   return <div>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <section className="relative overflow-hidden bg-[var(--navy)] text-white">
-      <img src={data.image} alt={`${data.country} study destination`} className="absolute inset-0 h-full w-full object-cover opacity-25" />
+      <img src={data.image} style={{ objectPosition: data.id === 'malta' ? 'center 75%' : 'center' }} alt={`${data.country} study destination`} className="absolute inset-0 h-full w-full object-cover opacity-25" />
       <div className="absolute inset-0 bg-[linear-gradient(120deg,#0e1626_10%,rgba(22,35,61,.8),rgba(124,58,237,.45))]" />
       <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
         <a href="/destinations" className="text-sm text-white/70 hover:text-white">← All destinations</a>

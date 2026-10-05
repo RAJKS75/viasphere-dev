@@ -171,7 +171,7 @@ U('Tufts University','Various'),
 U('University of Rochester','Various'),
 ],},
 {
-id:'australia',country:'Australia',visaType:'Student visa (subclass 500)',image:'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d4?auto=format&fit=crop&w=1600&q=80',summary:'A major international education destination with universities across research, professional and applied disciplines.',intakes:'February and July are common; other intakes depend on provider and programme.',officialVisaUrl:'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500',
+id:'australia',country:'Australia',visaType:'Student visa (subclass 500)',image:'/images/australia.jpg',summary:'A major international education destination with universities across research, professional and applied disciplines.',intakes:'February and July are common; other intakes depend on provider and programme.',officialVisaUrl:'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500',
 visaSteps:[
 {title:'Profile & course selection',description:'Select a registered course and provider.'},
 {title:'Admission / enrolment',description:'Apply for admission and obtain the CoE.'},
@@ -398,4 +398,23 @@ U('Dublin Business School','Dublin'),
 U('National College of Ireland','Various'),
 U('American College Dublin','Dublin'),
 ],},
+
+{
+ id:'malta', country:'Malta', visaType:'National student visa / study residence permit', image:'/images/malta.jpg',
+ summary:'Explore university and applied higher-education programmes in Malta, with course selection, admissions and student visa guidance.',
+ intakes:'Intakes and application deadlines vary by institution and programme.',
+ officialVisaUrl:'https://identita.gov.mt/central-visa-unit-student-visa-courses-exceeding-90-days/',
+ visaSteps:[
+  {title:'Choose a recognised programme',description:'Compare course content, entry requirements, tuition and intake dates using the official institution website.'},
+  {title:'Apply for admission',description:'Submit the documents required for your selected programme and review the conditions in your offer or acceptance letter.'},
+  {title:'Prepare your visa documents',description:'Use the current Identita student checklist to confirm enrolment evidence, financial documents, accommodation, insurance and other supporting items.'},
+  {title:'Follow the official application process',description:'Check the applicable student visa category, submission channel and appointment requirements before you travel.'},
+  {title:'Plan arrival and residence requirements',description:'Confirm enrolment arrangements and any applicable residence-permit steps with the institution and Identita.'},
+ ],
+ visaNotes:'Visa and residence requirements depend on nationality, course duration and qualification level. Check the current Identita guidance and your institution before applying. Admission does not guarantee a visa.',
+ universities:[
+  {name:'University of Malta',city:'Msida',levels:['Undergraduate','Postgraduate'],popularAreas:['Business & Management','Engineering','Computing','Arts & Humanities'],websiteUrl:'https://www.um.edu.mt/',admissionsUrl:'https://www.um.edu.mt/study/admissionsadvice/',admissionRequirements:'Consult the official course page and international admissions guidance for qualification equivalence, English-language evidence, supporting documents and application deadlines.'},
+  {name:'Malta College of Arts, Science and Technology (MCAST)',city:'Paola',levels:['Undergraduate','Postgraduate - selected programmes'],popularAreas:['Applied Sciences','Engineering','Business','Creative Arts'],websiteUrl:'https://mcast.edu.mt/',admissionsUrl:'https://mcast.edu.mt/international-applicants/',admissionRequirements:'Check the selected programme and official international applicants guidance for academic qualifications, recognised certificates, English-language requirements and current submission instructions.'},
+ ]
+},
 ]
