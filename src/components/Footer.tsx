@@ -16,7 +16,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-[var(--ink)] mb-4 uppercase tracking-wide">Company</h3>
           <ul className="space-y-2.5 text-sm">
             <li><Link to="/about" className="hover:text-[var(--gold-bright)] transition-colors">About Us</Link></li>
-            <li><Link to="/student-visa-consultant-ghaziabad" className="hover:text-[var(--gold-bright)] transition-colors">Student Visa Guidance</Link></li>
+            <li><Link to="/student-visa-consultant-ghaziabad" className="hover:text-[var(--gold-bright)] transition-colors">Study Visa Consultants in Ghaziabad</Link></li>
             <li><Link to="/services" className="hover:text-[var(--gold-bright)] transition-colors">Services</Link></li>
             <li><Link to="/exams" className="hover:text-[var(--gold-bright)] transition-colors">Exams</Link></li>
             <li><Link to="/destinations" className="hover:text-[var(--gold-bright)] transition-colors">Destinations</Link></li>

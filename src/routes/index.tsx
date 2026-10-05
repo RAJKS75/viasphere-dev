@@ -61,7 +61,7 @@ function Home() {
               <span>Study</span><span>Work</span><span>Visit</span><span>Settle</span><span>Globally</span>
             </div>
             <Link to="/student-visa-consultant-ghaziabad" className="mt-5 inline-flex text-sm font-semibold text-[var(--gold-bright)] underline decoration-[var(--gold)]/50 underline-offset-4 hover:decoration-[var(--gold-bright)]">
-              Student visa consultant in Ghaziabad
+              Study visa consultants in Ghaziabad
             </Link>
           </div>
 

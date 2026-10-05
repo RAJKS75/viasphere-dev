@@ -39,6 +39,12 @@ function Services() {
           ))}
         </div>
 
+        <p className="mt-8 max-w-2xl leading-relaxed text-[var(--ink-soft)]">
+          Planning your student visa application? Meet our{' '}
+          <Link to="/student-visa-consultant-ghaziabad" className="font-semibold text-blue-800 underline underline-offset-4">study visa consultants in Ghaziabad</Link>
+          {' '}to discuss your profile, documents and next steps at our Rajnagar Extension office.
+        </p>
+
         <div className="mt-16 rounded-2xl bg-[var(--parchment-deep)] p-10 text-center">
           <h2 className="font-display text-2xl text-[var(--navy)] mb-3">Not sure which service you need?</h2>
           <p className="text-[var(--ink-soft)] mb-6 max-w-md mx-auto">
