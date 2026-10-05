@@ -8,8 +8,8 @@ import { seoHead } from '@/lib/seo'
 export const Route = createFileRoute('/')({
   component: Home,
   head: () => seoHead({
-    title: 'Study Abroad & Study Visa Consultants in Ghaziabad | ViaSphere',
-    description: 'ViaSphere Global Consultants helps students in Ghaziabad and Delhi NCR with study abroad counselling, university admissions and student visa guidance for the UK, USA, Australia, Germany, France and Europe.',
+    title: 'Study Abroad Consultants in Ghaziabad | ViaSphere',
+    description: 'Study abroad consultants in Rajnagar Extension, Ghaziabad. Get university shortlisting, application and student visa guidance. Avail a free consultation.',
     path: '/',
   }),
 })
@@ -41,10 +41,10 @@ function Home() {
               <Sparkles className="h-4 w-4" /> Your future. A world of possibilities.
             </div>
             <h1 className="font-display text-5xl font-semibold leading-[1.03] tracking-tight md:text-4xl">
-              Make your study abroad plans <span className="text-blue-800">move forward.</span>
+              Study abroad consultants <span className="text-blue-800">in Ghaziabad.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)] md:text-xl">
-              Personalised study abroad counselling, university admissions and student visa preparation for students in Ghaziabad and Delhi NCR.
+              Plan your next step with ViaSphere Global Consultants in Rajnagar Extension, Ghaziabad. Get personalised university shortlisting, application support and student visa preparation for undergraduate and postgraduate study.
             </p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--ink-soft)]">
               Explore UK, USA, Australia, Germany, France, Malta, Ireland and New Zealand study options, with guidance from profile assessment through visa preparation.
@@ -184,7 +184,7 @@ function Home() {
               </div>
             </div>
             <div className="rounded-3xl border border-[var(--gold)]/25 bg-white/[.04] p-7">
-              <p className="text-xs font-bold uppercase tracking-[.18em] text-[var(--gold-bright)]">Visit our office</p>
+              <p className="text-xs font-bold uppercase tracking-[.18em] text-[var(--gold-bright)]">Visit our Ghaziabad office</p>
               <h3 className="mt-3 font-display text-2xl font-semibold">ViaSphere Global Consultants</h3>
               <div className="mt-6 space-y-4 text-sm text-[var(--ink-soft)]">
                 <p className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-[var(--gold-bright)]" /> Shop No-11, First Floor, AVS City Square, Rajnagar Extension, Ghaziabad-201017</p>

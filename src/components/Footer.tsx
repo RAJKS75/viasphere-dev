@@ -27,8 +27,8 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-[var(--ink)] mb-4 uppercase tracking-wide">Head Office</h3>
           <ul className="space-y-2.5 text-sm text-[var(--ink-soft)]">
-            <li>1st Floor, AVS City Square</li>
-            <li>11, Raj Nagar Extension, Ghaziabad 201017</li>
+            <li>Shop No-11, First Floor, AVS City Square</li>
+            <li>Rajnagar Extension, Ghaziabad, Uttar Pradesh 201017</li>
             <li>+91 9599080935</li>
             <li>admissions@viasphereglobal.com</li>
           </ul>

@@ -1,13 +1,18 @@
-import { Link, createFileRoute, useParams } from '@tanstack/react-router'
+import { Link, createFileRoute, useParams, notFound } from '@tanstack/react-router'
 import { ArrowRight, BookOpen, ExternalLink, CheckCircle2, Clock3, Target, GraduationCap, FileCheck2 } from 'lucide-react'
 import { exams } from '@/data/exams'
 import { seoHead } from '@/lib/seo'
 
 export const Route = createFileRoute('/exams_/$exam')({
   component: ExamPage,
+  beforeLoad: ({ params }) => {
+    if (!exams.some(exam => exam.id === params.exam)) throw notFound()
+  },
+  notFoundComponent: () => <section className="mx-auto max-w-6xl px-6 py-24"><h1 className="text-4xl font-semibold">Exam not found</h1><p className="mt-4">Choose IELTS, TOEFL, GMAT, GRE or SAT from our exam guides.</p><Link to="/exams" className="button-primary mt-6">View exam guides</Link></section>,
   head: ({ params }) => {
     const data = exams.find((x) => x.id === params.exam)
     return seoHead({
+      indexable: Boolean(data),
       title: data ? `${data.name} Guidance for Study Abroad | ViaSphere` : 'English & Admissions Exam Guidance | ViaSphere',
       description: data
         ? `${data.name} (${data.fullName}) guidance for students preparing for international university applications with ViaSphere Global Consultants.`
