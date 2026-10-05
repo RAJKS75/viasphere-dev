@@ -14,7 +14,7 @@ import {
   PlaneTakeoff,
   SearchCheck,
 } from 'lucide-react'
-import { seoHead } from '@/lib/seo'
+import { SITE_URL, seoHead } from '@/lib/seo'
 
 const PHONE_NUMBER = '+91 9599080935'
 const PHONE_LINK = 'tel:+919599080935'
@@ -24,8 +24,8 @@ const WHATSAPP_LINK =
 export const Route = createFileRoute('/student-visa-consultant-ghaziabad')({
   component: StudentVisaLandingPage,
   head: () => seoHead({
-    title: 'Student Visa Consultant in Ghaziabad | Study Abroad | ViaSphere',
-    description: 'Speak with ViaSphere Global Consultants in Ghaziabad for student visa guidance, study abroad counselling, university admissions and UG/PG application support across the UK, USA, Australia and Europe.',
+    title: 'Study Visa Consultants in Ghaziabad | ViaSphere',
+    description: 'Study visa consultants in Rajnagar Extension, Ghaziabad. Get student visa preparation, university application guidance and a free consultation with ViaSphere.',
     path: '/student-visa-consultant-ghaziabad',
   }),
 })
@@ -94,6 +94,18 @@ const steps = [
 
 const faqs = [
   {
+    question: 'Where can I meet your study visa consultants in Ghaziabad?',
+    answer: 'Our office is at Shop No-11, First Floor, AVS City Square, Rajnagar Extension, Ghaziabad, Uttar Pradesh 201017. Call +91 9599080935 or use the consultation form to arrange a visit.',
+  },
+  {
+    question: 'What should I prepare for my first consultation?',
+    answer: 'Have your academic results, preferred courses and countries, approximate budget and intended intake ready. If available, bring your passport details, English test results and any university offer or previous application correspondence. You can still book a discussion if you have not chosen a country.',
+  },
+  {
+    question: 'Is the initial study visa consultation free?',
+    answer: 'You can request a free initial consultation through our website. Use the discussion to understand suitable next steps and ask which services, university charges and visa application costs would apply before proceeding.',
+  },
+  {
     question: 'What support does ViaSphere provide for students?',
     answer:
       'ViaSphere provides guidance for course and university selection, applications, supporting documents, student visa preparation and pre-departure planning.',
@@ -116,6 +128,18 @@ const faqs = [
 ]
 
 function StudentVisaLandingPage() {
+  const pageUrl = `${SITE_URL}/student-visa-consultant-ghaziabad`
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    name: 'Study visa consultation in Ghaziabad',
+    serviceType: 'Study abroad counselling and student visa preparation',
+    url: pageUrl,
+    provider: { '@id': `${SITE_URL}/#localbusiness` },
+    areaServed: { '@type': 'City', name: 'Ghaziabad' },
+    description: 'Course selection, university application guidance, student visa document preparation and pre-departure planning from Rajnagar Extension, Ghaziabad.',
+  }
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -128,6 +152,7 @@ function StudentVisaLandingPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="overflow-hidden">
       <section className="relative overflow-hidden bg-[#e4f2fd] text-[var(--ink)]">
@@ -141,10 +166,10 @@ function StudentVisaLandingPage() {
               <MapPin className="h-4 w-4 text-blue-800" /> Ghaziabad · Noida · Delhi NCR
             </span>
             <h1 className="mt-7 font-display text-4xl font-bold leading-[1.15] tracking-tight md:text-4xl">
-              Student visa consultants in Ghaziabad for <span className="text-blue-800">study abroad.</span>
+              Study Visa Consultants <span className="text-blue-800">in Ghaziabad</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)] md:text-xl">
-              Get personalised support for overseas course selection, university applications, student visa preparation and pre-departure planning from ViaSphere Global Consultants.
+              Visit ViaSphere Global Consultants in Rajnagar Extension, Ghaziabad for personalised study visa guidance. From choosing an overseas course to organising university applications and student visa documents, our team helps you plan the next step around your profile, budget and intended intake.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -218,6 +243,38 @@ function StudentVisaLandingPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 pb-16" aria-labelledby="consultation-preparation">
+        <div className="rounded-3xl border border-blue-100 bg-white p-8 md:p-10">
+          <h2 id="consultation-preparation" className="font-display text-3xl font-semibold text-[var(--navy)]">Make the most of your free consultation</h2>
+          <p className="mt-4 max-w-3xl leading-relaxed text-[var(--ink-soft)]">You do not need a final university choice to start. A discussion about your education, budget and goals helps identify what to research and prepare next.</p>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <div>
+              <h3 className="font-display text-xl font-semibold">Have these details ready</h3>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-[var(--ink-soft)]">
+                <li>Your qualifications, grades and any study or work gaps</li>
+                <li>Preferred subject, study level and intended intake</li>
+                <li>Approximate tuition and living-cost budget</li>
+                <li>Any test scores, university offers or earlier application correspondence</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-display text-xl font-semibold">Questions to discuss with your counsellor</h3>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-[var(--ink-soft)]">
+                <li>Which courses fit your academic profile and goals?</li>
+                <li>Which documents and deadlines need attention first?</li>
+                <li>What support is included, and what costs are separate?</li>
+                <li>What needs to happen before you begin visa preparation?</li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-6 text-sm leading-relaxed text-[var(--ink-soft)]">This is a consultation preparation list, not a country-specific visa checklist. Requirements depend on your destination and circumstances. Admission and visa decisions remain with universities and immigration authorities.</p>
+          <div className="mt-6 flex flex-wrap gap-6">
+            <Link to="/services" className="font-semibold text-blue-800 underline underline-offset-4">Explore our counselling services</Link>
+            <Link to="/exams" className="font-semibold text-blue-800 underline underline-offset-4">Review English and admissions exam guidance</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#eaf4fc] py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-10 md:grid-cols-[.8fr_1.2fr] md:items-end">
@@ -263,9 +320,9 @@ function StudentVisaLandingPage() {
           <span className="mt-8 block text-sm font-bold uppercase tracking-[.18em] text-blue-800">Visit ViaSphere</span>
           <h2 className="mt-3 font-display text-3xl font-semibold">Student visa consultation in Ghaziabad</h2>
           <p className="mt-5 text-base leading-relaxed text-[var(--ink-soft)]">
-            1st Floor, AVS City Square<br />
-            11, Raj Nagar Extension<br />
-            Ghaziabad 201017, India
+            Shop No-11, First Floor, AVS City Square<br />
+            Rajnagar Extension, Ghaziabad<br />
+            Uttar Pradesh 201017, India
           </p>
           <p className="mt-5 text-base leading-relaxed text-[var(--ink-soft)]">
             Monday–Friday: 9:30am–6:30pm<br />
