@@ -26,6 +26,7 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: () => <section className="mx-auto max-w-6xl px-6 py-24"><h1 className="text-4xl font-semibold">Page not found</h1><p className="mt-4">This page does not exist. Explore our study destinations or contact our Ghaziabad team.</p><a href="/" className="button-primary mt-6">Return to homepage</a></section>,
   shellComponent: RootDocument,
 })
 
@@ -40,6 +41,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@graph': [
+                  {
+                    '@type': 'WebSite',
+                    '@id': `${SITE_URL}/#website`,
+                    name: 'ViaSphere Global Consultants',
+                    alternateName: 'ViaSphere Global',
+                    url: `${SITE_URL}/`,
+                    inLanguage: 'en-IN',
+                    publisher: { '@id': `${SITE_URL}/#organization` },
+                  },
                   {
                     '@type': 'Organization',
                     '@id': `${SITE_URL}/#organization`,

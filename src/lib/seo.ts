@@ -1,14 +1,17 @@
-export const SITE_URL = 'https://viasphereglobal.com'
+import { SITE_URL } from './canonical'
+export { SITE_URL } from './canonical'
 
 export function seoHead({
   title,
   description,
   path,
   image = '/images/viasphere-logo.png',
+  indexable = true,
 }: {
   title: string
   description: string
   path: string
+  indexable?: boolean
   image?: string
 }) {
   const canonical = `${SITE_URL}${path}`
@@ -18,7 +21,7 @@ export function seoHead({
     meta: [
       { title },
       { name: 'description', content: description },
-      { name: 'robots', content: 'index, follow, max-image-preview:large' },
+      { name: 'robots', content: indexable ? 'index, follow, max-image-preview:large' : 'noindex, follow' },
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
       { property: 'og:url', content: canonical },

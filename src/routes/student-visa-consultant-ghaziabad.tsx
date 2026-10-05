@@ -57,7 +57,7 @@ const supportAreas = [
   },
 ]
 
-const countryRoutes: Record<string,string> = { 'United Kingdom':'/destinations/uk', 'United States':'/destinations/usa', Australia:'/destinations/australia', Germany:'/destinations/germany', France:'/destinations/france', Ireland:'/destinations/ireland' }
+const countryRoutes: Record<string,string> = { 'United Kingdom':'/destinations/uk', 'United States':'/destinations/usa', Australia:'/destinations/australia', Germany:'/destinations/germany', France:'/destinations/france', Malta:'/destinations/malta', Ireland:'/destinations/ireland' }
 const destinations = [
   'United Kingdom',
   'United States',

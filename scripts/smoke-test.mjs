@@ -34,6 +34,12 @@ try {
     }
     if (path.startsWith('/exams/')) assert.equal(headings[0], path.split('/').pop().toUpperCase(), path)
     assert.ok(html.includes(`href="https://viasphereglobal.com${path}"`), `${path}: canonical`)
+    assert.equal((html.match(/rel="canonical"/g) || []).length, 1, `${path}: one canonical`)
+    assert.equal((html.match(/<title>/g) || []).length, 1, `${path}: one title`)
+    assert.ok(!/noindex/i.test(response.headers.get('x-robots-tag') || ''), `${path}: no blocking header`)
+    assert.ok(!/<meta[^>]+name="robots"[^>]+noindex/i.test(html), `${path}: indexable robots meta`)
+    assert.match(html, /<meta name="description" content="[^"]+"/, `${path}: description`)
+    for (const match of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) JSON.parse(match[1])
     const styles = [...html.matchAll(/<link\b[^>]*href="([^"]+)"[^>]*>/g)].map((match) => match[1]).filter((href) => href.endsWith('.css'))
     assert.ok(styles.length, `${path}: stylesheet`)
     styles.forEach((href) => assets.add(href))
@@ -49,7 +55,18 @@ try {
     if (path.endsWith('.pdf')) assert.match(type, /application\/pdf/, path)
     await response.arrayBuffer()
   }
-  assert.equal((await get('/this-page-does-not-exist')).status, 404, 'Unknown route must return 404')
+  for (const path of ['/this-page-does-not-exist', '/exams/not-a-real-exam']) {
+    const missing = await get(path)
+    assert.equal(missing.status, 404, `${path}: real 404`)
+    assert.match(missing.headers.get('x-robots-tag') || '', /noindex/, `${path}: error response noindex`)
+  }
+  const robots = await (await get('/robots.txt')).text()
+  assert.match(robots, /Sitemap: https:\/\/viasphereglobal\.com\/sitemap\.xml/)
+  assert.ok(!/Disallow:\s*\/(?:\s|$)/.test(robots), 'No sitewide crawl block')
+  const sitemap = await (await get('/sitemap.xml')).text()
+  const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1])
+  assert.equal(new Set(sitemapUrls).size, routes.length, 'Sitemap covers canonical pages once')
+  for (const path of routes) assert.ok(sitemapUrls.includes(`https://viasphereglobal.com${path}`), `${path}: in sitemap`)
   console.log(`PASS ${routes.length} pages, ${assets.size} assets, and 404 handling`)
 } catch (error) {
   console.error(error)
