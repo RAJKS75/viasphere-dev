@@ -35,6 +35,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <link rel="icon" href="/favicon.ico?v=vsg-blue-20261007" sizes="16x16 32x32 48x48 64x64 256x256" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
