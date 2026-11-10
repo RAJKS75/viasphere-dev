@@ -11,6 +11,7 @@ const navLinks = [
   { to: '/destinations', label: 'Destinations' },
   { to: '/services', label: 'Services' },
   { to: '/exams', label: 'Exams' },
+  { to: '/ielts-pte-training', label: 'IELTS & PTE Training' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]

@@ -35,6 +35,7 @@ function Exams() {
     </section>
 
     <section className="mx-auto max-w-6xl px-6 py-16">
+      <a href="/ielts-pte-training" className="mb-10 flex items-center justify-between gap-4 rounded-2xl border border-blue-200 bg-blue-50 p-6 text-blue-800"><span><strong>Preparing for IELTS or PTE?</strong><span className="mt-1 block text-sm">Explore online training, try free practice and build your study routine.</span></span><ArrowRight className="h-5 w-5 shrink-0" /></a>
       <div className="space-y-10">
         {exams.map((ex) => <article key={ex.id} id={ex.id} className="overflow-hidden rounded-[2rem] border border-violet-100 bg-white shadow-sm">
           <div className="bg-gradient-to-r from-violet-50 to-white p-7 md:p-9">
